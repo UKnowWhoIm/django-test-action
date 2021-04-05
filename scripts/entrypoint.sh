@@ -10,7 +10,6 @@ service postgresql start
 python add_psql.py
 echo "Added postgres config to your settings file"
 
-cd $GITHUB_WORKSPACE
 pip install -r requirements.txt
 echo "Migrating DB"
 python manage.py migrate
