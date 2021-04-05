@@ -21,7 +21,7 @@ Enable/Disable Parallel Tests. Default is false.
 ```
 uses: actions/checkout@v2
 name: Django CI
-uses: actions/django-test-action@v0.5
+uses: UKnowWhoIm/django-test-action@v0.5
 with:
   settings-dir-path: "testproject"
 ```
