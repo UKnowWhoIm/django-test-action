@@ -2,7 +2,6 @@
 set -e
 
 export SETTINGS_FILE="${GITHUB_WORKSPACE}/$1/settings.py"
-PARALLEL=$2
 
 service postgresql start
 
@@ -16,7 +15,7 @@ python manage.py migrate
 
 echo "Running your tests"
 # TODO: Find a better alternative
-if [ ${PARALLEL,,} == "true" ]; then
+if [ "${2,,}" == "true" ]; then
     echo "Enabled Parallel Testing"
     python manage.py test --parallel
 else 
