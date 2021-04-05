@@ -1,3 +1,5 @@
+# Add this PSQL Configuration to the django project
+
 import os
 
 PSQL_CONFIG = '''

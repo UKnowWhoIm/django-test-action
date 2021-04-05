@@ -1,8 +1,8 @@
 #!/bin/bash
-PARALLEL=true
-export SETTINGS_FILE="./testproject/settings.py"
-export DB_HOST='127.0.0.1'
-export DB_PORT='5432'
+export SETTINGS_FILE="./$1/settings.py"
+PARALLEL=$2
+#export SETTINGS_FILE="./testproject/settings.py"
+#PARALLEL=true
 
 service postgresql start
 
@@ -15,6 +15,7 @@ python manage.py migrate
 
 echo "Running your tests"
 if [ $PARALLEL ]; then
+    echo "Enabled Parallel Testing"
     python manage.py test --parallel
 else 
     python manage.py test

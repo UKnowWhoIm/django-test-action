@@ -1,0 +1,17 @@
+name: "Django Test CI"
+description: "A github action to run your django tests"
+inputs:
+  settings-dir-path:
+    description: "The path of the directory containing the settings file(Without `./`)"
+    required: true
+  parallel-tests:
+    description: "Run tests in parallel"
+    default: false
+    required: false
+runs-on: ubuntu-latest
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.settings-dir-path }}
+    - ${{ inputs.settings-parallel-tests }}
