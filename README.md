@@ -14,6 +14,9 @@ The relative path of the directory containing your settings file. This is used t
 #### `parallel-tests`
 Enable/Disable Parallel Tests. Default is false.
 
+#### `requirements-file`
+Path of the file containing the dependancies, default is requirements.txt
+
 ## Workflow Example
 
 ```
