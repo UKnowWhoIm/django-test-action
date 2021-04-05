@@ -1,5 +1,5 @@
 #!/bin/bash
-export SETTINGS_FILE="./$1/settings.py"
+export SETTINGS_FILE="${GITHUB_WORKSPACE}/$1/settings.py"
 PARALLEL=$2
 #export SETTINGS_FILE="./testproject/settings.py"
 #PARALLEL=true
@@ -10,6 +10,8 @@ service postgresql start
 python add_psql.py
 echo "Added postgres config to your settings file"
 
+cd $GITHUB_WORKSPACE
+pip install -r requirements.txt
 echo "Migrating DB"
 python manage.py migrate
 

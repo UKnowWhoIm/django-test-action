@@ -11,8 +11,7 @@ RUN mkdir -p /var/run/postgresql && chown -R postgres:postgres /var/run/postgres
 RUN apt-get update \
 && apt-get install -y --no-install-recommends postgresql libpq-dev python-psycopg2 \
 && apt-get purge -y --auto-remove \
-&& rm -rf /var/lib/apt/lists/* \
-&& echo ${GITHUB_WORKSPACE}
+&& rm -rf /var/lib/apt/lists/*
 
 USER postgres
 ENV DB_USER='test'
@@ -28,12 +27,11 @@ USER root
 
 #COPY ./django-project /django-project
 #COPY ./scripts /django-project
-COPY ./scripts $GITHUB_WORKSPACE
 #WORKDIR /django-project
-WORKDIR $GITHUB_WORKSPACE
 
-# Install dependancies
-RUN ls && python -m pip install -r requirements.txt
+COPY ./scripts /
+
+#Install psycopg2
 RUN pip install psycopg2-binary
 
 CMD ["./entrypoint.sh"]
