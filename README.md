@@ -24,7 +24,7 @@ Path of the file containing the dependancies, default is requirements.txt
 ```
 uses: actions/checkout@v2
 name: Django CI
-uses: UKnowWhoIm/django-test-action@v0.5
+uses: UKnowWhoIm/django-test-action@v0.5.1
 with:
   settings-dir-path: "testproject"
 ```
