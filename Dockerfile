@@ -25,9 +25,10 @@ RUN  service postgresql start \
 && psql -c "CREATE DATABASE ${DB_NAME} WITH owner ${DB_USER} encoding 'utf-8'"
 USER root
 
-COPY ./django-project /django-project
-COPY ./scripts /django-project
-WORKDIR /django-project
+#COPY ./django-project /django-project
+#COPY ./scripts /django-project
+COPY ./scripts /
+#WORKDIR /django-project
 
 # Install dependancies
 RUN python -m pip install -r requirements.txt
