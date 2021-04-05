@@ -1,5 +1,8 @@
 name: "Django Test CI"
 description: "A github action to run your django tests"
+branding:
+  icon: check-circle
+  color: green
 inputs:
   settings-dir-path:
     description: "The path of the directory containing the settings file(Without `./`)"
