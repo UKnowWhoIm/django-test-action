@@ -1,8 +1,6 @@
 #!/bin/bash
 export SETTINGS_FILE="${GITHUB_WORKSPACE}/$1/settings.py"
 PARALLEL=$2
-#export SETTINGS_FILE="./testproject/settings.py"
-#PARALLEL=true
 
 service postgresql start
 
