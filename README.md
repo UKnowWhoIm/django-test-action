@@ -4,8 +4,6 @@ A Django CI Github Action which runs your tests with a postgres database.
 
 **NOTE: You can use the DB service of your choice for your django app, using this action won't restrict you to postgres**
 
-A requirements.txt file must be present at the root of your repository to install dependancies.
-
 ## Arguments
 
 #### `settings-dir-path`
