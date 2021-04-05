@@ -27,12 +27,11 @@ USER root
 
 #COPY ./django-project /django-project
 #COPY ./scripts /django-project
-COPY ./scripts /${GITHUB_WORKSPACE}
 #WORKDIR /django-project
-WORKDIR /${GITHUB_WORKSPACE}
 
-# Install dependancies
-RUN ls && python -m pip install -r requirements.txt
+COPY ./scripts /
+
+#Install psycopg2
 RUN pip install psycopg2-binary
-
-CMD ["./entrypoint.sh"]
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
