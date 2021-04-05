@@ -9,7 +9,7 @@ service postgresql start
 python /add_psql.py
 echo "Added postgres config to your settings file"
 
-pip install -r requirements.txt
+pip install -r $3
 echo "Migrating DB"
 python manage.py migrate
 
