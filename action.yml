@@ -14,4 +14,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.settings-dir-path }}
-    - ${{ inputs.settings-parallel-tests }}
+    - ${{ inputs.parallel-tests }}
