@@ -15,7 +15,7 @@ python manage.py migrate
 
 echo "Running your tests"
 # TODO: Find a better alternative
-if [ $2 ]; then
+if [ "${2,,}" == "true" ]; then
     echo "Enabled Parallel Testing"
     python manage.py test --parallel
 else 
