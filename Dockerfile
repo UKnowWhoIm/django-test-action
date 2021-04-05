@@ -28,9 +28,9 @@ USER root
 
 #COPY ./django-project /django-project
 #COPY ./scripts /django-project
-COPY ./scripts ${GITHUB_WORKSPACE}
+COPY ./scripts $GITHUB_WORKSPACE
 #WORKDIR /django-project
-WORKDIR ${GITHUB_WORKSPACE}
+WORKDIR $GITHUB_WORKSPACE
 
 # Install dependancies
 RUN ls && python -m pip install -r requirements.txt
