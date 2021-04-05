@@ -33,5 +33,5 @@ COPY ./scripts /
 
 #Install psycopg2
 RUN pip install psycopg2-binary
-
-CMD ["/entrypoint.sh"]
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
