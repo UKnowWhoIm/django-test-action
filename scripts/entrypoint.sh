@@ -1,11 +1,13 @@
 #!/bin/bash
+-e
+
 export SETTINGS_FILE="${GITHUB_WORKSPACE}/$1/settings.py"
 PARALLEL=$2
 
 service postgresql start
 
 # Setup database
-python add_psql.py
+python /add_psql.py
 echo "Added postgres config to your settings file"
 
 pip install -r requirements.txt
