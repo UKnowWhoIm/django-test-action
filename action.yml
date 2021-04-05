@@ -1,8 +1,5 @@
 name: "Django Test CI"
 description: "A github action to run your django tests"
-branding:
-  icon: check-circle
-  color: green
 inputs:
   settings-dir-path:
     description: "The path of the directory containing the settings file(Without `./`)"
@@ -17,4 +14,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.settings-dir-path }}
-    - ${{ inputs.settings-parallel-tests }}
+    - ${{ inputs.parallel-tests }}

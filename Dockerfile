@@ -13,25 +13,24 @@ RUN apt-get update \
 && apt-get purge -y --auto-remove \
 && rm -rf /var/lib/apt/lists/*
 
-USER postgres
+# Environment variables
 ENV DB_USER='test'
 ENV DB_PASSWORD='test123'
 ENV DB_NAME='testdb'
 ENV DB_HOST='127.0.0.1'
 ENV DB_PORT='5432'
 
+# Create DB and User
+USER postgres
 RUN  service postgresql start \
 && psql -c "CREATE USER ${DB_USER} WITH SUPERUSER PASSWORD '${DB_PASSWORD}';ALTER USER ${DB_USER} CREATEDB;" \
 && psql -c "CREATE DATABASE ${DB_NAME} WITH owner ${DB_USER} encoding 'utf-8'"
 USER root
 
-#COPY ./django-project /django-project
-#COPY ./scripts /django-project
-#WORKDIR /django-project
-
 COPY ./scripts /
 
 #Install psycopg2
 RUN pip install psycopg2-binary
+
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
