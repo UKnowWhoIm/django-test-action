@@ -11,6 +11,10 @@ inputs:
     description: "Run tests in parallel"
     default: false
     required: false
+  requirements-file:
+    description: "The path of dependancy file, typically requirements.txt"
+    default: "requirements.txt"
+    required: false
 runs-on: ubuntu-latest
 runs:
   using: 'docker'
@@ -18,3 +22,4 @@ runs:
   args:
     - ${{ inputs.settings-dir-path }}
     - ${{ inputs.parallel-tests }}
+    - ${{ inputs.requirements-file }}
