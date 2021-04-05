@@ -13,7 +13,7 @@ pip install -r requirements.txt
 echo "Migrating DB"
 python manage.py migrate
 
-echo "Running your tests"
+echo "Running your tests, $2"
 # TODO: Find a better alternative
 if [ "${2,,}" == "true" ]; then
     echo "Enabled Parallel Testing"
