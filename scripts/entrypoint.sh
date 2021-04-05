@@ -15,7 +15,8 @@ echo "Migrating DB"
 python manage.py migrate
 
 echo "Running your tests"
-if [ $PARALLEL ]; then
+# TODO: Find a better alternative
+if [ ${PARALLEL,,} == "true" ]; then
     echo "Enabled Parallel Testing"
     python manage.py test --parallel
 else 
