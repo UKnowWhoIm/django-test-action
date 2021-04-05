@@ -4,6 +4,9 @@ import os
 
 PSQL_CONFIG = '''
 
+DEBUG = True
+SECRET_KEY = \"!bjum_ph83_@a@17v1^0r+7mx^xd*o-rl0t1#6fpm+38vfjuxq\"
+
 DATABASES[\"default\"] = {
     \"ENGINE\": \"django.db.backends.postgresql_psycopg2\",
     \"NAME\": \"%s\",
