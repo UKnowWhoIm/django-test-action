@@ -1,5 +1,5 @@
 #!/bin/bash
--e
+set -e
 
 export SETTINGS_FILE="${GITHUB_WORKSPACE}/$1/settings.py"
 PARALLEL=$2
