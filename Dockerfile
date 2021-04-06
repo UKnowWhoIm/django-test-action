@@ -9,7 +9,7 @@ RUN mkdir -p /var/run/postgresql && chown -R postgres:postgres /var/run/postgres
 
 
 RUN apt-get update \
-&& apt-get install -y --no-install-recommends postgresql libpq-dev python-psycopg2 \
+&& apt-get install -y --no-install-recommends postgresql build-essential libpq-dev python-psycopg2 gcc \
 && apt-get purge -y --auto-remove \
 && rm -rf /var/lib/apt/lists/*
 
