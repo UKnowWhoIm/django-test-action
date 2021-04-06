@@ -43,7 +43,7 @@ steps:
 ```
 uses: actions/checkout@v2
 name: Django CI
-uses: UKnowWhoIm/django-test-action@v0.5.1
+uses: UKnowWhoIm/django-test-action@v0.6
 with:
   settings-dir-path: "testproject"
 ```
