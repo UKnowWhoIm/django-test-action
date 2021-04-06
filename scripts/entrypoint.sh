@@ -3,6 +3,7 @@ set -e
 
 export SETTINGS_FILE="${GITHUB_WORKSPACE}/$1/settings.py"
 export SHELL_FILE_NAME="set_env.sh"
+export ENV_FILE_NAME=$4
 
 service postgresql start
 
@@ -11,7 +12,7 @@ python /modify_settings.py
 echo "Added postgres config to your settings file"
 
 # Setup user environment vars
-if [[ ! -z  $4 ]]; then
+if [[ ! -z $ENV_FILE_NAME ]]; then
     echo "Setting up your environment variables"
     python /setup_env_script.py
     . ./$SHELL_FILE_NAME

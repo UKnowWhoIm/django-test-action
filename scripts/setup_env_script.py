@@ -2,7 +2,7 @@ import os
 import re
 
 if __name__ == "__main__":
-    env_file = os.environ.get("GITHUB_WORKSPACE") + "/" + os.environ.get("4")
+    env_file = os.environ.get("GITHUB_WORKSPACE") + "/" + os.environ.get("ENV_FILE_NAME")
     shell_file = os.environ.get("GITHUB_WORKSPACE") + "/" + os.environ.get("SHELL_FILE_NAME")
     env_commands = []
     valid_cmd = "([A-Za-z_][A-Za-z0-9_]*=[^# ]+)"
