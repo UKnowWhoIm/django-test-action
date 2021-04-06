@@ -15,6 +15,10 @@ inputs:
     description: "The path of dependancy file, typically requirements.txt"
     default: "requirements.txt"
     required: false
+  env-file:
+    description: "The path of an env file, if you require environment variables"
+    default: ""
+    required: false
 runs-on: ubuntu-latest
 runs:
   using: 'docker'
@@ -23,3 +27,4 @@ runs:
     - ${{ inputs.settings-dir-path }}
     - ${{ inputs.parallel-tests }}
     - ${{ inputs.requirements-file }}
+    - ${{ inputs.env-file }}
