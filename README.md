@@ -17,6 +17,14 @@ Enable/Disable Parallel Tests. Default is false.
 #### `requirements-file`
 Path of the file containing the dependancies, default is requirements.txt
 
+#### `env-file`
+Path of the the file containoing additional environment variables.
+
+`SECRET_KEY`, `DEBUG` and `DATABASES` are manually set, if your django app depends on any other environment variable, set them in this file.
+
+**WARNING: Don't store sensitive data, use random dummy data only**
+
+
 ## Workflow Example
 
 ```
