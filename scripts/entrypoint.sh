@@ -4,6 +4,7 @@ set -e
 export SETTINGS_FILE="${GITHUB_WORKSPACE}/$1/settings.py"
 export SHELL_FILE_NAME="set_env.sh"
 export ENV_FILE_NAME=$4
+export DATABASE_URL=postgresql://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_NAME
 
 service postgresql start
 

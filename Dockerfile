@@ -19,7 +19,6 @@ ENV DB_PASSWORD='test123'
 ENV DB_NAME='testdb'
 ENV DB_HOST='127.0.0.1'
 ENV DB_PORT='5432'
-ENV DATABASE_URL='postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}'
 
 # Create DB and User
 USER postgres
