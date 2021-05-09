@@ -20,7 +20,7 @@ Path of the file containing the dependancies, default is requirements.txt
 #### `env-file`
 Path of the the file containing additional environment variables.
 
-`SECRET_KEY`, `DEBUG` and `DATABASES` are manually set, if your django app depends on any other environment variable, set them in this file or set them like this
+`SECRET_KEY`, `DEBUG` and `DATABASES` are automatically set, if your django app depends on any other environment variable, set them in this file or set them like this
 ```
 name: Django CI
 env: 
@@ -29,7 +29,7 @@ env:
 
 **WARNING: Don't store sensitive data, use random dummy data only**
 
-If you have to use sensitive data(highly not recommended in a test environment), store them as a [repository secret](https://docs.github.com/en/actions/reference/encrypted-secrets) and include them in the workflow file.
+If you have to use sensitive data, store them as a [repository secret](https://docs.github.com/en/actions/reference/encrypted-secrets) and include them in the workflow file.
 ```
 steps:
   - name: Django CI
